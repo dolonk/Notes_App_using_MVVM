@@ -21,15 +21,15 @@ public class NotesRepository {
         getAllNotes = notesDao.getAllNotes();
     }
 
-    void insertNotes(Notes notes) {
+    public void insertNotes(Notes notes) {
         notesDao.insertNotes(notes);
     }
 
-    void deleteNotes(int id) {
+    public void deleteNotes(int id) {
         notesDao.deleteNotes(id);
     }
 
-    void updateNotes(Notes notes) {
+    public void updateNotes(Notes notes) {
         notesDao.updateNotes(notes);
     }
 }
