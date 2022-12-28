@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".Model.Ui.InsertNoteActivity">
+
+    <EditText
+        android:id="@+id/tittleID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/edit_text_background"
+        android:fontFamily="@font/product_sans_regular"
+        android:hint="Tittle"
+        android:textColorHint="#BF360C"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/subTittleID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/edit_text_background"
+        android:fontFamily="@font/product_sans_regular"
+        android:hint="Sub Tittle"
+        android:textColorHint="#BF360C"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tittleID"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/priorityID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/product_sans_bold"
+        android:padding="5dp"
+        android:text="Priority"
+        android:textColor="#BF360C"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subTittleID" />
+
+    <EditText
+        android:id="@+id/noteID"
+        android:layout_width="match_parent"
+        android:layout_height="303dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/edit_text_background"
+        android:fontFamily="@font/product_sans_regular"
+        android:gravity="start"
+        android:hint="Add note here"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        android:textColorHint="#BF360C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priorityID"
+        tools:ignore="TextContrastCheck" />
+
+    <ImageView
+        android:id="@+id/greenPriorityID"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/noteID"
+        app:layout_constraintStart_toEndOf="@+id/priorityID"
+        app:layout_constraintTop_toBottomOf="@+id/subTittleID"
+        app:srcCompat="@drawable/green_shape"
+        tools:ignore="ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/yellowPriorityID"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/noteID"
+        app:layout_constraintStart_toEndOf="@+id/greenPriorityID"
+        app:layout_constraintTop_toBottomOf="@+id/subTittleID"
+        app:srcCompat="@drawable/yellow_shape"
+        tools:ignore="ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/redPriorityID"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/noteID"
+        app:layout_constraintStart_toEndOf="@+id/yellowPriorityID"
+        app:layout_constraintTop_toBottomOf="@+id/subTittleID"
+        app:srcCompat="@drawable/red_shape"
+        tools:ignore="ImageContrastCheck" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/doneFloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="330dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/red"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noteID"
+        app:layout_constraintVertical_bias="0.41000003"
+        app:srcCompat="@drawable/ic_baseline_done_24"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>
