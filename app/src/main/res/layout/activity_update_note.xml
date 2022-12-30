@@ -8,7 +8,7 @@
     tools:context=".Model.Ui.InsertNoteActivity">
 
     <EditText
-        android:id="@+id/tittleID"
+        android:id="@+id/updateTittleID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -17,11 +17,11 @@
         android:background="@drawable/edit_text_background"
         android:fontFamily="@font/product_sans_regular"
         android:hint="Tittle"
+        android:textColorHint="#BF360C"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:padding="15dp"
-        android:textColorHint="#BF360C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +29,7 @@
         tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/subTittleID"
+        android:id="@+id/updateSubTittleID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -38,19 +38,19 @@
         android:background="@drawable/edit_text_background"
         android:fontFamily="@font/product_sans_regular"
         android:hint="Sub Tittle"
+        android:textColorHint="#BF360C"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:padding="15dp"
-        android:textColorHint="#BF360C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tittleID"
+        app:layout_constraintTop_toBottomOf="@+id/updateTittleID"
         tools:ignore="TextContrastCheck" />
 
     <TextView
-        android:id="@+id/priorityID"
+        android:id="@+id/updatePriorityID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -61,10 +61,10 @@
         android:textColor="#BF360C"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subTittleID" />
+        app:layout_constraintTop_toBottomOf="@+id/updateSubTittleID" />
 
     <EditText
-        android:id="@+id/noteID"
+        android:id="@+id/updateNoteID"
         android:layout_width="match_parent"
         android:layout_height="303dp"
         android:layout_marginLeft="16dp"
@@ -78,43 +78,44 @@
         android:textColorHint="#BF360C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/priorityID"
+        app:layout_constraintTop_toBottomOf="@+id/updatePriorityID"
         tools:ignore="TextContrastCheck" />
 
     <ImageView
-        android:id="@+id/greenPriorityID"
+        android:id="@+id/updateGreenPriorityID"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="15dp"
         android:background="@drawable/green_shape"
-        app:layout_constraintBottom_toTopOf="@+id/noteID"
-        app:layout_constraintStart_toEndOf="@+id/priorityID"
-        app:layout_constraintTop_toBottomOf="@+id/subTittleID" />
+        app:layout_constraintBottom_toTopOf="@+id/updateNoteID"
+        app:layout_constraintStart_toEndOf="@+id/updatePriorityID"
+        app:layout_constraintTop_toBottomOf="@+id/updateSubTittleID"
+        tools:ignore="ImageContrastCheck" />
 
     <ImageView
-        android:id="@+id/yellowPriorityID"
+        android:id="@+id/updateYellowPriorityID"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="15dp"
         android:background="@drawable/yellow_shape"
-        app:layout_constraintBottom_toTopOf="@+id/noteID"
-        app:layout_constraintStart_toEndOf="@+id/greenPriorityID"
-        app:layout_constraintTop_toBottomOf="@+id/subTittleID"
+        app:layout_constraintBottom_toTopOf="@+id/updateNoteID"
+        app:layout_constraintStart_toEndOf="@+id/updateGreenPriorityID"
+        app:layout_constraintTop_toBottomOf="@+id/updateSubTittleID"
         tools:ignore="ImageContrastCheck" />
 
     <ImageView
-        android:id="@+id/redPriorityID"
+        android:id="@+id/updateRedPriorityID"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginStart="15dp"
         android:background="@drawable/red_shape"
-        app:layout_constraintBottom_toTopOf="@+id/noteID"
-        app:layout_constraintStart_toEndOf="@+id/yellowPriorityID"
-        app:layout_constraintTop_toBottomOf="@+id/subTittleID"
+        app:layout_constraintBottom_toTopOf="@+id/updateNoteID"
+        app:layout_constraintStart_toEndOf="@+id/updateYellowPriorityID"
+        app:layout_constraintTop_toBottomOf="@+id/updateSubTittleID"
         tools:ignore="ImageContrastCheck" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/doneFloatingActionButton"
+        android:id="@+id/updateDoneFloatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="330dp"
@@ -127,7 +128,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/noteID"
+        app:layout_constraintTop_toBottomOf="@+id/updateNoteID"
         app:layout_constraintVertical_bias="0.41000003"
         app:srcCompat="@drawable/ic_baseline_done_24"
         tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />

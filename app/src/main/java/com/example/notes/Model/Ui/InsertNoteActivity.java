@@ -19,6 +19,7 @@ public class InsertNoteActivity extends AppCompatActivity {
     ActivityInsertNoteBinding binding;
     String tittle, subTittle, notes;
     NotesViewModel notesViewModel;
+    String priority = "1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,27 @@ public class InsertNoteActivity extends AppCompatActivity {
         setContentView(view);
 
         notesViewModel = ViewModelProviders.of(this).get(NotesViewModel.class);
+
+        binding.greenPriorityID.setOnClickListener(v -> {
+            binding.greenPriorityID.setImageResource(R.drawable.ic_baseline_done_24);
+            binding.yellowPriorityID.setImageResource(0);
+            binding.redPriorityID.setImageResource(0);
+            priority = "1";
+        });
+
+        binding.yellowPriorityID.setOnClickListener(v -> {
+            binding.greenPriorityID.setImageResource(0);
+            binding.yellowPriorityID.setImageResource(R.drawable.ic_baseline_done_24);
+            binding.redPriorityID.setImageResource(0);
+            priority = "2";
+        });
+
+        binding.redPriorityID.setOnClickListener(v -> {
+            binding.greenPriorityID.setImageResource(0);
+            binding.yellowPriorityID.setImageResource(0);
+            binding.redPriorityID.setImageResource(R.drawable.ic_baseline_done_24);
+            priority = "3";
+        });
 
         binding.doneFloatingActionButton.setOnClickListener(v -> {
             tittle = binding.tittleID.getText().toString();
@@ -40,14 +62,16 @@ public class InsertNoteActivity extends AppCompatActivity {
     private void CreatedNotes(String tittle, String subTittle, String notes) {
 
         Date date = new Date();
-        CharSequence sequence = DateFormat.format("MMMM,d,YYYY",date.getTime());
+        CharSequence sequence = DateFormat.format("d MMMM,yyyy",date.getTime());
 
-        Notes notes1 = new Notes();
-        notes1.notesTittle = tittle;
-        notes1.notesSubTittle = subTittle;
-        notes1.notesDate = notes;
-        notes1.notesDate = sequence.toString();
-        notesViewModel.insertNote(notes1);
+        Notes insertNotes = new Notes();
+        insertNotes.notesTittle = tittle;
+        insertNotes.notesSubTittle = subTittle;
+        insertNotes.notesPriority = priority;
+        insertNotes.notes = notes;
+        insertNotes.notesDate = notes;
+        insertNotes.notesDate = sequence.toString();
+        notesViewModel.insertNote(insertNotes);
         Toast.makeText(this, "Notes Created Successfully", Toast.LENGTH_SHORT).show();
         finish();
     }

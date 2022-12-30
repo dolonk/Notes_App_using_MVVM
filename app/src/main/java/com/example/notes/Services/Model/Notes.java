@@ -16,12 +16,13 @@ public class Notes {
     @ColumnInfo(name = "Notes_subTittle")
     public String notesSubTittle;
 
-    @ColumnInfo(name = "Notes_date")
-    public String notesDate;
+    @ColumnInfo(name = "Notes_priority")
+    public String notesPriority;
 
     @ColumnInfo(name = "Notes")
     public String notes;
 
-    @ColumnInfo(name = "Notes_priority")
-    public String NotesPriority;
+    @ColumnInfo(name = "Notes_date")
+    public String notesDate;
+
 }
