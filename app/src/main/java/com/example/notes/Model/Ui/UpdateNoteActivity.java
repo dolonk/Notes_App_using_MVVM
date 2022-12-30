@@ -1,11 +1,17 @@
 package com.example.notes.Model.Ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
 import android.os.Bundle;
 import android.text.format.DateFormat;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.notes.R;
@@ -13,6 +19,7 @@ import com.example.notes.Services.Model.Notes;
 import com.example.notes.ViewModel.NotesViewModel;
 import com.example.notes.databinding.ActivityInsertNoteBinding;
 import com.example.notes.databinding.ActivityUpdateNoteBinding;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.Date;
 
@@ -95,5 +102,36 @@ public class UpdateNoteActivity extends AppCompatActivity {
         notesViewModel.updateNote(updateNotes);
         Toast.makeText(this, "Notes Update Successfully", Toast.LENGTH_SHORT).show();
         finish();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.delete_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.ic_delete) {
+            BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(UpdateNoteActivity.this, R.style.BottomSheetStyle);
+            View view = LayoutInflater.from(UpdateNoteActivity.this).
+                    inflate(R.layout.delete_bottom_sheet, (LinearLayout) findViewById(R.id.bottomSheetID));
+            bottomSheetDialog.setContentView(view);
+
+            TextView yes, no;
+            no = view.findViewById(R.id.deleteNoID);
+            yes = view.findViewById(R.id.deleteYesID);
+
+            yes.setOnClickListener(v -> {
+                notesViewModel.deleteNote(uId);
+                finish();
+            });
+
+            no.setOnClickListener(v -> {
+                bottomSheetDialog.dismiss();
+            });
+            bottomSheetDialog.show();
+        }
+        return true;
     }
 }

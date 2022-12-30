@@ -15,11 +15,17 @@
     </style>
 
     <style name="ProgressBar" >
-
         <item name="colorSecondary">@color/red</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
+    </style>
 
+    <style name="BottomSheetStyle" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Model</item>
+    </style>
+
+    <style name="Model" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:background">@drawable/delete_sheet</item>
     </style>
 
 </resources>
