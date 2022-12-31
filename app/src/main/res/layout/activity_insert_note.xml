@@ -87,6 +87,7 @@
         android:layout_height="25dp"
         android:layout_marginStart="15dp"
         android:background="@drawable/green_shape"
+        android:src="@drawable/ic_baseline_done_24"
         app:layout_constraintBottom_toTopOf="@+id/noteID"
         app:layout_constraintStart_toEndOf="@+id/priorityID"
         app:layout_constraintTop_toBottomOf="@+id/subTittleID" />

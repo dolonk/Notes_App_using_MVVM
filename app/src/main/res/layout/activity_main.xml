@@ -4,33 +4,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey"
     tools:context=".Model.Ui.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:padding="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            app:srcCompat="@drawable/filter_list" />
+
+        <TextView
+            android:id="@+id/noFilterID"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/filter_round_shape"
+            android:paddingLeft="17dp"
+            android:paddingTop="7dp"
+            android:paddingRight="17dp"
+            android:paddingBottom="7dp"
+            android:text="No Filter"
+            android:fontFamily="@font/product_sans_bold"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/highToLowID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="17dp"
+            android:paddingTop="7dp"
+            android:paddingRight="17dp"
+            android:paddingBottom="7dp"
+            android:layout_marginLeft="5dp"
+            android:text="High to low"
+            android:fontFamily="@font/product_sans_bold"
+            android:textSize="15sp"
+            android:background="@drawable/filter_round_shape"
+            />
+
+        <TextView
+            android:id="@+id/lowToHighID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/filter_round_shape"
+            android:fontFamily="@font/product_sans_bold"
+            android:paddingLeft="17dp"
+            android:paddingTop="7dp"
+            android:paddingRight="17dp"
+            android:paddingBottom="7dp"
+            android:text="Low to high"
+            android:textSize="15sp" />
+    </LinearLayout>
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewID"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="600dp"
-        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.015" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutID"
+        app:layout_constraintVertical_bias="0.01" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="300dp"
-        android:layout_marginTop="16dp"
         android:layout_marginBottom="28dp"
-        android:clickable="true"
         android:backgroundTint="@color/red"
+        android:clickable="true"
+        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerViewID"
-        app:srcCompat="@drawable/ic_baseline_add_24" />
+        app:srcCompat="@drawable/ic_baseline_add_24"
+        tools:ignore="SpeakableTextPresentCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
