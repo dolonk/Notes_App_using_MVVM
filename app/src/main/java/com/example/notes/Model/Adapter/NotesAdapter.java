@@ -13,17 +13,25 @@ import com.example.notes.Model.Ui.UpdateNoteActivity;
 import com.example.notes.R;
 import com.example.notes.Services.Model.Notes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.notesViewHolder> {
 
     MainActivity mainActivity;
     List<Notes> notes;
+    List<Notes> searchNotesItem;
 
 
     public NotesAdapter(MainActivity mainActivity, List<Notes> notes) {
         this.mainActivity = mainActivity;
         this.notes = notes;
+        searchNotesItem = new ArrayList<>(notes);
+    }
+
+    public void searchNotes(List<Notes> searchbar) {
+        this.notes = searchbar;
+        notifyDataSetChanged();
     }
 
     @Override
