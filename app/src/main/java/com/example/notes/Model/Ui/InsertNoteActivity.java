@@ -19,7 +19,7 @@ import java.util.Date;
 
 public class InsertNoteActivity extends AppCompatActivity {
     ActivityInsertNoteBinding binding;
-    String tittle, subTittle, notes;
+    String tittle, subTittle, notes, pickDate;
     NotesViewModel notesViewModel;
     String priority = "1";
 
@@ -67,14 +67,14 @@ public class InsertNoteActivity extends AppCompatActivity {
                 binding.noteID.setError("Note is Required");
                 binding.noteID.requestFocus();
             } else {
-                CreatedNotes(tittle, subTittle, notes);
+                CreatedNotes(tittle, subTittle, notes, pickDate);
             }
         });
 
 
     }
 
-    private void CreatedNotes(String tittle, String subTittle, String notes) {
+    private void CreatedNotes(String tittle, String subTittle, String notes, String pickDate) {
 
         Date date = new Date();
         CharSequence sequence = DateFormat.format("d MMMM,yyyy", date.getTime());
@@ -84,7 +84,7 @@ public class InsertNoteActivity extends AppCompatActivity {
         insertNotes.notesSubTittle = subTittle;
         insertNotes.notesPriority = priority;
         insertNotes.notes = notes;
-        insertNotes.notesDate = notes;
+        insertNotes.notesDate = pickDate;
         insertNotes.notesDate = sequence.toString();
         notesViewModel.insertNote(insertNotes);
         Toast.makeText(this, "Notes Created Successfully", Toast.LENGTH_SHORT).show();

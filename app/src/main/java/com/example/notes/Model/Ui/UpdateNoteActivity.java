@@ -26,7 +26,7 @@ import java.util.Date;
 public class UpdateNoteActivity extends AppCompatActivity {
     ActivityUpdateNoteBinding binding;
     int uId;
-    String uTittle, uSubTittle, uPriority, uNotes;
+    String uTittle, uSubTittle, uPriority, uNotes, uPickDate;
     NotesViewModel notesViewModel;
     String priority = "1";
 
@@ -83,11 +83,11 @@ public class UpdateNoteActivity extends AppCompatActivity {
             String subTittle = binding.updateSubTittleID.getText().toString();
             String priority = binding.updatePriorityID.getText().toString();
             String notes = binding.updateNoteID.getText().toString();
-            UpdateNotes(tittle, subTittle, notes);
+            UpdateNotes(tittle, subTittle, notes, uPickDate);
         });
     }
 
-    private void UpdateNotes(String tittle, String subTittle, String notes) {
+    private void UpdateNotes(String tittle, String subTittle, String notes, String uPickDate) {
         Date date = new Date();
         CharSequence sequence = DateFormat.format("d MMMM,yyyy", date.getTime());
 
@@ -97,7 +97,7 @@ public class UpdateNoteActivity extends AppCompatActivity {
         updateNotes.notesSubTittle = subTittle;
         updateNotes.notesPriority = priority;
         updateNotes.notes = notes;
-        updateNotes.notesDate = notes;
+        updateNotes.notesDate = uPickDate;
         updateNotes.notesDate = sequence.toString();
         notesViewModel.updateNote(updateNotes);
         Toast.makeText(this, "Notes Update Successfully", Toast.LENGTH_SHORT).show();
